@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+#Database container
+  mysql:
+      image: percona/percona-server:5.7.22
+      ports:
+         - 3306:3306
+      volumes:
+         - db_data:/var/lib/mysql
+      environment:
+          MYSQL_ROOT_PASSWORD: root
+          # with mysql
+          MYSQL_DATABASE: database1
+          MYSQL_USER: database1
+          MYSQL_PASSWORD: p455w0rd
+volumes:
+  db_data:
